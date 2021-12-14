@@ -4,10 +4,12 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
+import EmailList from './EmailList';
+import Mail from './Mail';
 
 
 function App() {
@@ -17,14 +19,10 @@ function App() {
         <Header />
         <div className="app__body">
           <Sidebar />
-          <Switch>
-            <Route path="/mail">
-              <Mail />
-            </Route>
-            <Route path="/">
-              <EmailList />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/mail" element={<Mail />} />
+            <Route path="/" element={<EmailList />} />
+          </Routes>
         </div>
 
       </div>
